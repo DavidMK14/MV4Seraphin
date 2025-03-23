@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ef4444', // rouge vif pour boutons et accents
+            darkBlue: '#0f172a', // background profond
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darkBlue text-white font-sans bg-fixed bg-cover" style="background-image: url('assets/f1.gif');">
+  <!-- Navigation -->
+<!-- Navbar -->
+<nav class="fixed  top-0 w-full z-50  text-white bg-black "style="background-image: url('assets/b.gif');">
+  <div class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+    <div class="text-2xl text-primary  font-extrabold">MV4</div>
+
+    <!-- Hamburger button -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Menu -->
+    <ul id="menu" class="hidden md:flex space-x-6 text-sm">
+      <li><a href="#experience" class="block text-white text-lg hover:text-primary">Expérience</a></li>
+      <li><a href="#projet" class="block text-white text-lg hover:text-primary">Projets</a></li>
+      <li><a href="#contact" class="block text-white text-lg hover:text-primary">Contact</a></li>
+      <li><a href="#moi" class="border border-white rounded-full px-4 py-1 hover:bg-primary hover:border-primary transition">Moi</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+    <ul class="space-y-4 text-sm">
+      <li><a href="#experience" class="block text-white hover:text-primary hover:bg-white">Expérience</a></li>
+      <li><a href="#projet" class="block text-white hover:text-primary hover:bg-white">Projets</a></li>
+      <li><a href="#contact" class="block text-white hover:text-primary hover:bg-white">Contact</a></li>
+      <li><a href="#moi" class="block border border-white rounded-full px-4 py-1 hover:bg-primary hover:border-primary transition">Moi</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- Script -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+<div class=" bg-darkBlue bg-opacity-50 h-24"></div>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center p-8 relative">
+    <div class="absolute inset-0 bg-darkBlue bg-opacity-50 z-0 bg-cover "></div>
+    <div class="relative z-10 grid md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+      <!-- Text Side -->
+      <div>
+        <p class="text-lg text-gray-400 mb-2 fade-in">Salut, je suis</p>
+        <h1 class="text-5xl font-bold mb-4 leading-tight fade-in">Voumas-Y'Ombouma<span class="text-primary fade-in"></span></h1>
+        <h1 class="text-5xl font-bold mb-4 leading-tight fade-in text-primary">Séraphin <span class="text-primary fade-in">David</span></h1>
+        <p class="text-gray-400 mb-6 fade-in">Developpeur fullstack , designer <span class="text-primary fade-in"> UI/UX</span></p>
+        <div class="flex space-x-4 mb-6 fade-in">
+          <a href="https://www.facebook.com/david.voumas.5" class="hover:text-primary"><img src="assets/fbk.png" alt="" class="w-10 h-10 hover:scale-105"></a>
+          <a href="https://x.com/davidZK10885774" class="hover:text-primary"><img src="assets/twt.png" alt="" class="w-10 h-10 hover:scale-105"></a>
+          <a href="https://www.instagram.com/david_gngngn/" class="hover:text-primary"><img src="assets/ig.png" alt="" class="w-12 h-12 hover:scale-105 -mt-1"></a>
+          <a href="https://www.linkedin.com/in/david-ombouma-595473309/" class="hover:text-primary"><img src="assets/lkdn.png" alt="" class="w-10 h-10 hover:scale-105"></a>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#moi" class="bg-primary px-6 py-2 rounded-full font-semibold transition hover:scale-105 fade-in">Me découvrir</a>
+          <a href="#" class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-darkBlue transition fade-in">Portfolio</a>
+        </div>
+      </div>
+      <!-- Image Side -->
+      <div class="flex justify-center hover:opacity-30 transition duration-500 fade-in hidden sm:flex">
+        <img src="assets/qq.gif" alt="Portrait" class="w-48 h-48 rounded-lg shadow-lg" />
+      </div>
+      
+    </div>
+  </section>
+  <section class="bg-gray-900 text-white py-20">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+      <!-- Image -->
+      <div class="relative group p-2 ">
+        <img src="assets/moi1.jpg " alt="Photo de profil" class=" rounded-2xl shadow-lg transform group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-primary opacity-20 rounded-2xl group-hover:opacity-30 transition duration-500"></div>
+      </div>
+  
+      <!-- Texte -->
+      <div  id="moi">
+        <h2 class="text-4xl font-extrabold mb-6">À propos de moi</h2>
+        <div class="bg-primary h-2 w-24 "></div>
+        <p class="text-gray-300 text-lg mb-6 leading-relaxed pt-2">
+          Passionné par tout ce qui touche l'IT, le design, et les projets créatifs, je mets mon énergie à créer des expériences uniques. 
+          J’ai une approche polyvalente : gestion de projets, développement front-end, jeux vidéo, design UI/UX, et même un peu de hacking éthique. Je suis toujours prêt à relever de nouveau défi 
+        </p>
+        <p class="text-gray-400 text-md mb-6 italic">
+          "Créer, innover, apprendre — c’est ce qui me fait vibrer."
+        </p>
+        <a href="tel:+221772092230" class="inline-block bg-primary hover:bg-white hover:text-primary text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+          Me Contacter
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="experience" class="bg-gray-900 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 text-center">Expérience & Formation</h2>
+  
+      <div class="relative border-l border-gray-700 pl-6">
+        <!-- Item 1 -->
+        <div class="mb-10 group fade-in flex items-start">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-blue-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9.75 3v1.5M14.25 3v1.5M3 7.5h18M4.5 7.5v11.25a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5V7.5M9 12h6M9 15h4.5" />
+          </svg>
+          <div class="ml-4">
+            <h3 class="text-xl font-bold">Développeur Front-End</h3>
+            <p class="mt-2 text-gray-300">Création d’interfaces responsive avec React et Tailwind CSS, amélioration UX/UI.</p>
+          </div>
+        </div>
+      
+        <!-- Item 2 -->
+        <div class="mb-10 group fade-in flex items-start">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-green-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 7.5l9 6 9-6M3 16.5l9 6 9-6M3 7.5v9M21 7.5v9" />
+          </svg>
+          <div class="ml-4">
+            <h3 class="text-xl font-bold">Freelance Web Designer</h3>
+            <p class="text-sm text-gray-400">Indépendant • 2024 - 2025</p>
+            <p class="mt-2 text-gray-300">Conception de sites vitrines et intéractifs.</p>
+          </div>
+        </div>
+      
+        <!-- Item 3 -->
+        <div class="mb-10 group fade-in flex items-start">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-yellow-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div class="ml-4">
+            <h3 class="text-xl font-bold">Licence 2 Génie-Informatique</h3>
+            <p class="text-sm text-gray-400">Universprofessionel (unipro) • 2024 - 2025</p>
+            <p class="mt-2 text-gray-300">Spécialisation en développement web dynamique, bases de données et projets full-stack.</p>
+          </div>
+        </div>
+      
+        <!-- Item 4 -->
+        <div class="group fade-in flex items-start">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-purple-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 10h16M4 14h10M4 18h10M14 14h6v6h-6v-6z" />
+          </svg>
+          <div class="ml-4">
+            <h3 class="text-xl font-bold">Stage en maintenance informatique, infographie et Wordpress.</h3>
+            <p class="text-sm text-gray-400">Tout en informatique TGI • 2024</p>
+            <p class="mt-2 text-gray-300">Formation pratique pour approfondir mes compétences en maintenance logiciel, création des flyers en Photoshop et projet Wordpress.</p>
+          </div>
+        </div>
+      </div>
+        </section>
+<style>.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+.fade-in:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+<section id="competence" class="bg-tranparent text-white py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-12 text-center">Compétences</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Compétence 1 : Gestion de projet -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Gestion de Projet</h3>
+        <p class="text-gray-300">Coordination des équipes et gestion de projets avec méthode agile pour atteindre les objectifs dans les délais impartis.</p>
+      </div>
+
+      <!-- Compétence 2 : Python (niveau basique) -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Python</h3>
+        <p class="text-gray-300">Apprentissage des bases de Python pour automatiser des tâches et développer des scripts simples.</p>
+      </div>
+
+      <!-- Compétence 3 : Développement Web Dynamique -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Développement Web Dynamique</h3>
+        <p class="text-gray-300">Création de sites web dynamiques avec JavaScript, React et d'autres technologies pour une expérience interactive.</p>
+      </div>
+
+      <!-- Compétence 4 : SQL (niveau basique) -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">SQL</h3>
+        <p class="text-gray-300">Gestion des bases de données et écriture de requêtes SQL simples pour interroger et manipuler des données.</p>
+      </div>
+
+      <!-- Compétence 5 : Design UI -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Design UI</h3>
+        <p class="text-gray-300">Création d'interfaces utilisateur conviviales et esthétiques, centrées sur l'expérience utilisateur avec des outils comme Figma.</p>
+      </div>
+
+      <!-- Compétence 6 : Hacking (niveau débutant) -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Hacking</h3>
+        <p class="text-gray-300">Apprentissage des bases de la cybersécurité et des techniques de hacking éthique pour protéger les systèmes.</p>
+      </div>
+
+      <!-- Compétence 7 : Création de Jeux Vidéo avec Unity -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Création de Jeux Vidéo avec Unity</h3>
+        <p class="text-gray-300">Développement de jeux interactifs en 3D et 2D avec Unity, en utilisant le langage C# pour la logique du jeu.</p>
+      </div>
+
+      <!-- Compétence 8 : Montage Vidéo (niveau normal) -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Montage Vidéo </h3>
+        <p class="text-gray-300">Création et édition de vidéos, en maîtrisant les base outils comme Vn Editor , filmora pour produire un contenu de qualité.</p>
+      </div>
+
+      <!-- Compétence 9 : Graphisme (Blender, Photoshop, Illustrator) -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Graphisme Blender, Photoshop, Illustrator</h3>
+        <p class="text-gray-300">Conaissance des logiciels de création graphique pour concevoir des images, des illustrations et des animations 3D.</p>
+      </div>
+
+      <!-- Compétence 10 : Connaissance de FL Studio -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Connaissance du logiciel FL Studio</h3>
+        <p class="text-gray-300">Utilisation de FL Studio pour la création musicale, composition, enregistrement et édition de musique électronique et autres genres.</p>
+      </div>
+       <!-- Compétence 11 : burautique -->
+       <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Bureautique Word, Excel, PowerPoint</h3>
+        <p class="text-gray-300">Maîtrise des logiciels bureautiques pour la création de documents, l'analyse de données et la création de présentations professionnelles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Projet  -->
+<section id="projet" class="bg-gray-900 text-white py-16 px-4">
+  <div class="max-w-6xl mx-auto ">
+    <h2 class="text-4xl font-bold  text-center mb-12">Espace Projets </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Projet 1 -->
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <img src="assets/ass.jpg" alt="Projet 1" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet d'école HTML CSS</h3>
+          <p class="text-gray-300">Un site web complet pour la gestion de logement pour une agence immobilière.</p>
+          <p href="#" class="text-primary hover:text-white mt-4 inline-block">Réalisé</p>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <img src="assets/gbn.png" alt="Projet 2" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet stage Wordpress</h3>
+          <p class="text-gray-300">Site web présentant le gabon avec différente page et rubrique.</p>
+          <p href="#" class="text-primary hover:text-white mt-4 inline-block">Réalisé</p>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <img src="assets/react.png" alt="Projet 3" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet d'école React</h3>
+          <p class="text-gray-300">Projet portant sur la gestion de rendez-vous d'une clinique utilisant nestJS, Typescripts et tailwindcss</p>
+          <p href="#" class="text-primary hover:text-white mt-4 inline-block">En cour...</p>
+        </div>
+      </div>
+
+      <!-- Projet 4 -->
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <img src="assets/etsn.jpeg" alt="Projet 4" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-4 text-primary">eatysen.com</h3>
+          <p class="text-gray-300">Site de vente de nourriture en ligne</p>
+          <a href="http://eatysen.com" class="text-primary hover:text-white mt-4 inline-block">Voir le site</a>
+        </div>
+      </div>
+
+      <!-- Projet 5 -->
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <img src="assets/Unity.jpeg" alt="Projet 5" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet Unity</h3>
+          <p class="text-gray-300">Création d'un jeu 3D multiplateforme d'aventure incarnant le mystère des villages africains </p>
+          <p href="#" class="text-primary hover:text-white mt-4 inline-block">En cour...</p>
+        </div>
+      </div>
+
+      <!-- Projet 6 -->
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
+        <img src="assets/fltt.jpg" alt="Projet 6" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet flutter</h3>
+          <p class="text-gray-300">Application mobile de chat vidéos </p>
+          <p href="#" class="text-primary hover:text-white mt-4 inline-block">En cour...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <!-- contact -->
+      <section id="contact" class="w-full min-h-screen bg-tranparent bg-opacity-90 text-white flex flex-col md:flex-row p-10 relative" style="background-image: url('assets/af.gif');">
+        <!-- Partie gauche : Infos -->
+        
+            <div class="md:w-1/2 w-full space-y-6 inset-0 bg-darkBlue bg-opacity-90 z-0 p-4">
+              <h2 class="text-4xl font-bold pl-2">Contactez <span class="text-red-500">moi.</span></h2>
+              <div class="border-l-4 border-red-500 pl-4 space-y-4 mt-6">
+                <div>
+                  <p class="text-gray-400 uppercase text-sm"></p>
+                  <p class="text-2xl break-words">OUAKAM</p>
+                </div>
+                <div class="pt-4 pb-4 space-y-2">
+                  <p class="text-gray-400 uppercase text-lg">Numéro personnel</p>
+                  <a href="tel:+221772092230" class="text-primary text-2xl break-words hover:underline">+221 77 209 22 30</a>
+            
+                  <p class="text-gray-400 uppercase text-lg">Email personnel</p>
+                  <p class="text-primary text-2xl break-words">voumasdavid35@gmail.com</p>
+            
+                  <p class="text-gray-400 uppercase text-lg pt-2">Email professionnel 
+                    <span class="text-gray-400 text-xl  lowercase">eatysen.com</span> 
+                  </p>
+                  <p class="text-primary text-2xl break-words">SeraphinDavid@eatysen.com</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <!-- Réseaux sociaux -->
+        </div>
+      
+        <!-- Partie droite : Formulaire -->
+        <div class="md:w-1/2 mt-10 md:mt-0 flex items-center justify-center relative">
+          <!-- Cadres rouges -->
+          <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
+            <div class="border-t-4 border-l-4 border-white w-[80%] h-[80%] absolute top-0 left-0"></div>
+            <div class="border-b-4 border-r-4 border-white w-[80%] h-[80%] absolute bottom-0 right-0"></div>
+          </div>
+          
+          <!-- Carte formulaire -->
+          <div class="p-8 rounded shadow-md w-full max-w-md relative inset-0 bg-darkBlue bg-opacity-90 z-0">
+            <h3 class="text-xl font-semibold mb-6 text-center">Me joindre</h3>
+            <form class="space-y-4">
+              <div>
+                <label class="text-sm uppercase text-gray-400">Nom</label>
+                <input type="text" placeholder="Votre nom" class="w-full p-2 mt-1 bg-blue-800 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-red-500 text-white" />
+              </div>
+              <div>
+                <label class="text-sm uppercase text-gray-400">Email</label>
+                <input type="email" placeholder="Votre email" class="w-full p-2 mt-1 bg-blue-800 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-red-500 text-white" />
+              </div>
+              <div>
+                <label class="text-sm uppercase text-gray-400">Message</label>
+                <textarea placeholder="Votre message" class="w-full p-2 mt-1 bg-blue-800 border border-gray-600 rounded h-28 resize-none focus:outline-none focus:ring-2 focus:ring-red-500 text-white"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600 transition">ENVOYEZ LE MESSAGE</button>
+            </form>
+          </div>
+        </div>
+      </section>
+  <footer class="text-white text-center bg-black font-extrabold p-4 mt-8"style="background-image: url('assets/b.gif');">
+    &copy; 2025 <span class="text-primary"> MV4</span>. Tous droits réservés.
+  </footer>
+</body>
+</html>
