@@ -105,7 +105,7 @@
         <div class="bg-primary h-2 w-24 "></div>
         <p class="text-gray-300 text-lg mb-6 leading-relaxed pt-2">
           Passionné par tout ce qui touche l'IT, le design, et les projets créatifs, je mets mon énergie à créer des expériences uniques. 
-          J’ai une approche polyvalente : gestion de projets, développement front-end, jeux vidéo, design UI/UX, et même un peu de hacking éthique. Je suis toujours prêt à relever de nouveau défi 
+          J’ai une approche polyvalente : gestion de projets, développement front-end/back-end, jeux vidéo, design UI/UX, et même un peu de hacking éthique. Je suis toujours prêt à relever de nouveau défi 
         </p>
         <p class="text-gray-400 text-md mb-6 italic">
           "Créer, innover, apprendre — c’est ce qui me fait vibrer."
@@ -117,11 +117,26 @@
     </div>
   </section>
   
-  <section id="experience" class="bg-gray-900 text-white py-16 px-4">
+   <section id="experience" class="bg-gray-900 text-white py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold mb-12 text-center">Expérience & Formation</h2>
   
       <div class="relative border-l border-gray-700 pl-6">
+
+         <!-- Item 3 (Formation - non modifié) -->
+        <div class="mb-10 group fade-in flex items-start">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-yellow-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div class="ml-4">
+            <h3 class="text-xl font-bold">Licence 3 en Génie Informatique</h3>
+            <p class="text-sm text-gray-400">Universprofessionel (unipro) • 2023 - 2026</p>
+          </div>
+        </div>
+
         <!-- Item 1 -->
         <div class="mb-10 group fade-in flex items-start">
           <!-- Icon -->
@@ -131,8 +146,9 @@
               d="M9.75 3v1.5M14.25 3v1.5M3 7.5h18M4.5 7.5v11.25a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5V7.5M9 12h6M9 15h4.5" />
           </svg>
           <div class="ml-4">
-            <h3 class="text-xl font-bold">Développeur Front-End</h3>
-            <p class="mt-2 text-gray-300">Création d’interfaces responsive avec React et Tailwind CSS, amélioration UX/UI.</p>
+            <h3 class="text-xl font-bold">Développeur Web React JS</h3>
+            <p class="text-sm text-gray-400">Tout en Informatique (TGI) - Dakar • Juin - Juillet 2025</p>
+            <p class="mt-2 text-gray-300">Développement d'interface utilisateur et optimisation des plateformes web.</p>
           </div>
         </div>
       
@@ -145,43 +161,14 @@
               d="M3 7.5l9 6 9-6M3 16.5l9 6 9-6M3 7.5v9M21 7.5v9" />
           </svg>
           <div class="ml-4">
-            <h3 class="text-xl font-bold">Freelance Web Designer</h3>
-            <p class="text-sm text-gray-400">Indépendant • 2024 - 2025</p>
-            <p class="mt-2 text-gray-300">Conception de sites vitrines et intéractifs.</p>
+            <h3 class="text-xl font-bold">Développeur Front-End React Native</h3>
+            <p class="text-sm text-gray-400">Keops Technologies - Dakar • Octobre - Décembre 2025</p>
+            <p class="mt-2 text-gray-300">Création d'interface mobile et intégration d'API REST.</p>
           </div>
-        </div>
-      
-        <!-- Item 3 -->
-        <div class="mb-10 group fade-in flex items-start">
-          <!-- Icon -->
-          <svg class="w-6 h-6 text-yellow-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <div class="ml-4">
-            <h3 class="text-xl font-bold">Licence 2 Génie-Informatique</h3>
-            <p class="text-sm text-gray-400">Universprofessionel (unipro) • 2024 - 2025</p>
-            <p class="mt-2 text-gray-300">Spécialisation en développement web dynamique, bases de données et projets full-stack.</p>
-          </div>
-        </div>
-      
-        <!-- Item 4 -->
-        <div class="group fade-in flex items-start">
-          <!-- Icon -->
-          <svg class="w-6 h-6 text-purple-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 10h16M4 14h10M4 18h10M14 14h6v6h-6v-6z" />
-          </svg>
-          <div class="ml-4">
-            <h3 class="text-xl font-bold">Stage en maintenance informatique, infographie et Wordpress.</h3>
-            <p class="text-sm text-gray-400">Tout en informatique TGI • 2024</p>
-            <p class="mt-2 text-gray-300">Formation pratique pour approfondir mes compétences en maintenance logiciel, création des flyers en Photoshop et projet Wordpress.</p>
-          </div>
-        </div>
+        </div>   
       </div>
-        </section>
+    </div>
+  </section>
 <style>.fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -218,8 +205,8 @@
 
       <!-- Compétence 3 : Développement Web Dynamique -->
       <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <h3 class="text-2xl font-semibold mb-4 text-primary">Développement Web Dynamique</h3>
-        <p class="text-gray-300">Création de sites web dynamiques avec JavaScript, React et d'autres technologies pour une expérience interactive.</p>
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Développement Web/Mobile</h3>
+        <p class="text-gray-300">Création de sites web et applications mobiles avec JavaScript, React et d'autres technologies pour une expérience interactive.</p>
       </div>
 
       <!-- Compétence 4 : SQL (niveau basique) -->
@@ -234,11 +221,6 @@
         <p class="text-gray-300">Création d'interfaces utilisateur conviviales et esthétiques, centrées sur l'expérience utilisateur avec des outils comme Figma.</p>
       </div>
 
-      <!-- Compétence 6 : Hacking (niveau débutant) -->
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <h3 class="text-2xl font-semibold mb-4 text-primary">Hacking</h3>
-        <p class="text-gray-300">Apprentissage des bases de la cybersécurité et des techniques de hacking éthique pour protéger les systèmes.</p>
-      </div>
 
       <!-- Compétence 7 : Création de Jeux Vidéo avec Unity -->
       <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
@@ -246,11 +228,6 @@
         <p class="text-gray-300">Développement de jeux interactifs en 3D et 2D avec Unity, en utilisant le langage C# pour la logique du jeu.</p>
       </div>
 
-      <!-- Compétence 8 : Montage Vidéo (niveau normal) -->
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <h3 class="text-2xl font-semibold mb-4 text-primary">Montage Vidéo </h3>
-        <p class="text-gray-300">Création et édition de vidéos, en maîtrisant les base outils comme Vn Editor , filmora pour produire un contenu de qualité.</p>
-      </div>
 
       <!-- Compétence 9 : Graphisme (Blender, Photoshop, Illustrator) -->
       <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
@@ -258,11 +235,6 @@
         <p class="text-gray-300">Conaissance des logiciels de création graphique pour concevoir des images, des illustrations et des animations 3D.</p>
       </div>
 
-      <!-- Compétence 10 : Connaissance de FL Studio -->
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <h3 class="text-2xl font-semibold mb-4 text-primary">Connaissance du logiciel FL Studio</h3>
-        <p class="text-gray-300">Utilisation de FL Studio pour la création musicale, composition, enregistrement et édition de musique électronique et autres genres.</p>
-      </div>
        <!-- Compétence 11 : burautique -->
        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
         <h3 class="text-2xl font-semibold mb-4 text-primary">Bureautique Word, Excel, PowerPoint</h3>
@@ -272,69 +244,61 @@
   </div>
 </section>
   <!-- Projet  -->
+<!-- Projet -->
 <section id="projet" class="bg-gray-900 text-white py-16 px-4">
-  <div class="max-w-6xl mx-auto ">
-    <h2 class="text-4xl font-bold  text-center mb-12">Espace Projets </h2>
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12">Espace Projets</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
       <!-- Projet 1 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <img src="assets/ass.jpg" alt="Projet 1" class="w-full h-64 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet d'école HTML CSS</h3>
-          <p class="text-gray-300">Un site web complet pour la gestion de logement pour une agence immobilière.</p>
-          <p href="#" class="text-primary hover:text-white mt-4 inline-block">Réalisé</p>
-        </div>
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform p-6 flex flex-col items-center text-center">
+        <img src="assets/logoxchat.png" alt="Logo Projet 1" class="w-20 h-20 object-contain mb-4 rounded-full bg-white p-2">
+        <h3 class="text-2xl font-bold mb-2 text-white">x-chats</h3>
+        <p class="text-gray-300 mb-4">Réseau social anonyme.</p>
+        <a href="projet.html?id=1" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-primary transition">Voir</a>
       </div>
 
       <!-- Projet 2 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <img src="assets/gbn.png" alt="Projet 2" class="w-full h-64 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet stage Wordpress</h3>
-          <p class="text-gray-300">Site web présentant le gabon avec différente page et rubrique.</p>
-          <p href="#" class="text-primary hover:text-white mt-4 inline-block">Réalisé</p>
-        </div>
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform p-6 flex flex-col items-center text-center">
+        <img src="assets/logols.png" alt="Logo Projet 2" class="w-20 h-20 object-contain mb-4 rounded-full bg-white p-2">
+        <h3 class="text-2xl  font-bold mb-2 text-white">Linesénégal</h3>
+        <p class="text-gray-300 mb-4">Résaux de vente et services.</p>
+        <a href="projet.html?id=2" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-primary transition">Voir</a>
       </div>
 
-      <!-- Projet 3 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <img src="assets/react.png" alt="Projet 3" class="w-full h-64 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet d'école React</h3>
-          <p class="text-gray-300">Projet portant sur la gestion de rendez-vous d'une clinique utilisant nestJS, Typescripts et tailwindcss</p>
-          <p href="#" class="text-primary hover:text-white mt-4 inline-block">En cour...</p>
-        </div>
+      <!-- Projet 3 
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform p-6 flex flex-col items-center text-center">
+        <img src="assets/logolass.png" alt="Logo Projet 3" class="w-20 h-20 object-contain mb-4 rounded-full bg-white p-2">
+        <h3 class="text-2xl font-semibold mb-2 text-primary">Lass</h3>
+        <p class="text-gray-300 mb-4">Gestion de ventes et de dettes</p>
+        <a href="projet.html?id=3" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-primary transition">Voir</a>
       </div>
-
+-->
       <!-- Projet 4 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <img src="assets/etsn.jpeg" alt="Projet 4" class="w-full h-64 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-4 text-primary">eatysen.com</h3>
-          <p class="text-gray-300">Site de vente de nourriture en ligne</p>
-          <a href="http://eatysen.com" class="text-primary hover:text-white mt-4 inline-block">Voir le site</a>
-        </div>
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform p-6 flex flex-col items-center text-center">
+        <img src="assets/logozntfc.png" alt="Logo Projet 4" class="w-20 h-20 object-contain mb-4 rounded-full bg-white p-2">
+        <h3 class="text-2xl font-bold mb-2 text-white">Zntfc</h3>
+        <p class="text-gray-300 mb-4">Plateforme de gestion immobilière.</p>
+        <a href="projet.html?id=4" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-primary transition">Voir</a>
       </div>
 
       <!-- Projet 5 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <img src="assets/Unity.jpeg" alt="Projet 5" class="w-full h-64 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet Unity</h3>
-          <p class="text-gray-300">Création d'un jeu 3D multiplateforme d'aventure incarnant le mystère des villages africains </p>
-          <p href="#" class="text-primary hover:text-white mt-4 inline-block">En cour...</p>
-        </div>
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform p-6 flex flex-col items-center text-center">
+        <img src="assets/logounisante.gif" alt="Logo Projet 5" class="w-20 h-20 object-contain mb-4 rounded-full bg-white p-2">
+        <h3 class="text-2xl font-bold mb-2 text-white">Unisanté</h3>
+        <p class="text-gray-300 mb-4">Plateforme de gestion de rendez-vous médicaux.</p>
+        <a href="projet.html?id=5" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-primary transition">Voir</a>
       </div>
 
       <!-- Projet 6 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform">
-        <img src="assets/fltt.jpg" alt="Projet 6" class="w-full h-64 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-4 text-primary">Projet flutter</h3>
-          <p class="text-gray-300">Application mobile de chat vidéos </p>
-          <p href="#" class="text-primary hover:text-white mt-4 inline-block">En cour...</p>
-        </div>
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-red-500 hover:scale-105 transition-all transform p-6 flex flex-col items-center text-center">
+        <img src="assets/logoncis.png" alt="Logo Projet 6" class="w-20 h-20 object-contain mb-4 rounded-full bg-white p-2">
+        <h3 class="text-2xl font-bold mb-2 text-white">NCIS</h3>
+        <p class="text-gray-300 mb-4">Application de gestion bancaire.</p>
+        <a href="projet.html?id=6" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-primary transition">Voir</a>
       </div>
+
+    
     </div>
   </div>
 </section>
@@ -356,10 +320,6 @@
                   <p class="text-gray-400 uppercase text-lg">Email personnel</p>
                   <p class="text-primary text-2xl break-words">voumasdavid35@gmail.com</p>
             
-                  <p class="text-gray-400 uppercase text-lg pt-2">Email professionnel 
-                    <span class="text-gray-400 text-xl  lowercase">eatysen.com</span> 
-                  </p>
-                  <p class="text-primary text-2xl break-words">SeraphinDavid@eatysen.com</p>
                 </div>
               </div>
             </div>
@@ -398,7 +358,7 @@
         </div>
       </section>
   <footer class="text-white text-center bg-black font-extrabold p-4 mt-8"style="background-image: url('assets/b.gif');">
-    &copy; 2025 <span class="text-primary"> MV4</span>. Tous droits réservés.
+    &copy; 2026 <span class="text-primary"> MV4</span>. Tous droits réservés.
   </footer>
 </body>
 </html>

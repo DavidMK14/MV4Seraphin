@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Détail Projet - MV4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ef4444',
+            darkBlue: '#0f172a',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darkBlue text-white font-sans">
+
+  <!-- Navbar (identique à index.html) -->
+  <nav class="fixed top-0 w-full z-50 text-white bg-black" style="background-image: url('assets/b.gif');">
+    <div class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+      <a href="index.html" class="text-2xl text-primary font-extrabold">MV4</a>
+
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <ul id="menu" class="hidden md:flex space-x-6 text-sm">
+        <li><a href="index.html#experience" class="block text-white text-lg hover:text-primary">Expérience</a></li>
+        <li><a href="index.html#projet" class="block text-white text-lg hover:text-primary">Projets</a></li>
+        <li><a href="index.html#contact" class="block text-white text-lg hover:text-primary">Contact</a></li>
+        <li><a href="index.html#moi" class="border border-white rounded-full px-4 py-1 hover:bg-primary hover:border-primary transition">Moi</a></li>
+      </ul>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+      <ul class="space-y-4 text-sm">
+        <li><a href="index.html#experience" class="block text-white hover:text-primary hover:bg-white">Expérience</a></li>
+        <li><a href="index.html#projet" class="block text-white hover:text-primary hover:bg-white">Projets</a></li>
+        <li><a href="index.html#contact" class="block text-white hover:text-primary hover:bg-white">Contact</a></li>
+        <li><a href="index.html#moi" class="block border border-white rounded-full px-4 py-1 hover:bg-primary hover:border-primary transition">Moi</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="h-24"></div>
+
+  <!-- Contenu du projet (rempli dynamiquement par le JS) -->
+  <main class="max-w-5xl mx-auto px-6 py-12 min-h-screen">
+
+    <a href="index.html#projet" class="inline-flex items-center text-primary hover:text-white mb-8 transition">
+      &larr; Retour aux projets
+    </a>
+
+    <div id="projet-non-trouve" class="hidden text-center py-20">
+      <h1 class="text-3xl font-bold mb-4">Projet introuvable</h1>
+      <p class="text-gray-400">Le projet demandé n'existe pas ou a été supprimé.</p>
+    </div>
+
+    <div id="projet-content" class="hidden">
+      <div class="flex items-center gap-4 mb-6">
+        <img id="p-logo" src="" alt="Logo" class="w-16 h-16 object-contain rounded-full bg-white p-2">
+        <h1 id="p-nom" class="text-4xl font-extrabold"></h1>
+      </div>
+      <div class="bg-primary h-1 w-24 mb-6"></div>
+ <!-- Description -->
+      <h2 class="text-2xl font-bold mb-4 text-primary">Description</h2>
+      <p id="p-description" class="text-gray-300 text-lg leading-relaxed whitespace-pre-line mb-8"></p>
+
+      <!-- Galerie des images -->
+      <div id="p-galerie" class="grid lg:grid-cols-2 gap-6 mb-10"></div>
+
+      <!-- Lien externe optionnel -->
+      <a id="p-lien" href="#" target="_blank" class="hidden bg-primary px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition">
+        Voir le site
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer (identique à index.html) -->
+  <footer class="text-white text-center bg-black font-extrabold p-4" style="background-image: url('assets/b.gif');">
+    &copy; 2026 <span class="text-primary">MV4</span>. Tous droits réservés.
+  </footer>
+
+  <!-- Affichage plein écran de l'image sélectionnée -->
+  <div id="image-modal" class="hidden fixed inset-0 z-[100] bg-black/95 p-4 sm:p-8 items-center justify-center" role="dialog" aria-modal="true" aria-label="Image en plein écran">
+    <button id="image-modal-close" type="button" class="absolute top-4 right-5 text-white text-4xl leading-none hover:text-primary" aria-label="Fermer l'image plein écran">&times;</button>
+    <img id="image-modal-content" src="" alt="" class="max-w-full max-h-full object-contain">
+  </div>
+
+  <script>
+    // Menu mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    /*
+      ==========================================================
+      DONNÉES DES PROJETS — À REMPLIR TOI-MÊME
+      ==========================================================
+      Pour chaque projet :
+      - id          : doit correspondre au ?id= utilisé dans index.html (1 à 8)
+      - logo        : chemin du logo/icône (le même que sur la carte index.html)
+      - nom         : nom du projet
+      - description : description complète (utilise "\n\n" pour un saut de paragraphe)
+      - images      : tableau d'images du projet. La 1ère sert d'image principale,
+                      les suivantes s'affichent en galerie miniatures.
+      - lien        : (optionnel) URL externe du site si le projet est en ligne.
+                      Laisse "" si pas de lien.
+    */
+    const projets = [
+      {
+        id: 1,
+        logo: "assets/logoxchat.png",
+        nom: "x-chats",
+description: "x-chats est un réseau social de messagerie anonyme .\nFonctionnalités principale: \n\n- Messages anonymes\n- Stories, réponses anonymes \n- Discussion de groupe \n- Partage de lien",
+        images: [
+          "assets/1.png","assets/2.png","assets/3.png","assets/4.png","assets/5.png"
+
+        ],
+        lien: ""
+      },
+      {
+        id: 2,
+        logo: "assets/logols.png",
+        nom: "Linesénégal",
+description: "Linesénégal est un réseau de vente et sevices permettant aux utilisateurs d'acheter et vendre des produits. Aux acteurs économiques d'êtres visibles. \nFonctionnalités principale: \n\n- Création et gestion de profil\n- Gestion des produis/services \n- Recherche de produits/services/acteurs à proximité\n- Marketplace \n- Messagerie intégrée \n- Services de livraison en temps réel\n- Notifications de proximité d'un acteur mobile ",
+        images: [
+          "assets/ls1.png","assets/ls2.png","assets/ls3.png","assets/ls4.png","assets/ls5.png"
+        ],
+        lien: ""
+      },
+      {
+        id: 3,
+        logo: "assets/logolass.png",
+        nom: "Lass",
+        description: "À compléter.",
+        images: [
+          "assets/react.png"
+        ],
+        lien: ""
+      },
+      {
+        id: 4,
+        logo: "assets/logozntfc.png",
+        nom: "Zntfc",
+description: "Zntfc est une plateforme de gestion immobilière .\nFonctionnalités principale: \n\n- Gestion des biens immobiliers\n- Gestion des locataires et contrats \n- Paiement des loyers \n- Recherche de biens immobiliers",
+        images: [
+         "assets/z1.jpeg", "assets/z1.2.png","assets/z2.jpeg","assets/z3.jpeg","assets/z4.jpeg","assets/z10.jpeg"
+        ],
+        lien: "http://eatysen.com"
+      },
+      {
+        id: 5,
+        logo: "assets/logounisante.gif",
+        nom: "Unisanté",
+description: "Unisanté est une plateforme de gestion de rendez-vous médicaux .\nFonctionnalités principale: \n\n- Gestion des rendez-vous\n- Gestion des patients \n- Recherche des médecins \n- Gestion des dossiers médicaux \n- Notifications de rendez-vous",
+        images: [
+          "assets/u1.png","assets/u2.png","assets/u4.jpeg","assets/u10.jpeg"
+        ],
+        lien: ""
+      },
+      {
+        id: 6,
+        logo: "assets/logoncis.png",
+        nom: "NCIS",
+description: "NCIS est une plateforme bancaire .\nFonctionnalités principale: \n\n- Gestion des clients\n- Ouverture de comptes bancaires \n- ATM intégré : Dépôt, retrait, solde, emprunt\n- Gestion des comptes bancaires ",
+        images: [
+          "assets/n1.png","assets/n2.png","assets/n3.png","assets/n4.jpeg","assets/n6.png","assets/n5.png","assets/n7.png",
+        ],
+        lien: ""
+      },
+      
+
+    ];
+
+    // Lecture du paramètre ?id= dans l'URL
+    const params = new URLSearchParams(window.location.search);
+    const idDemande = parseInt(params.get('id'), 10);
+    const projet = projets.find(p => p.id === idDemande);
+
+    const contentEl = document.getElementById('projet-content');
+    const notFoundEl = document.getElementById('projet-non-trouve');
+
+    if (!projet) {
+      notFoundEl.classList.remove('hidden');
+    } else {
+      contentEl.classList.remove('hidden');
+
+      document.title = projet.nom + " - MV4";
+      document.getElementById('p-logo').src = projet.logo;
+      document.getElementById('p-nom').textContent = projet.nom;
+      document.getElementById('p-description').textContent = projet.description;
+
+      const images = projet.images && projet.images.length ? projet.images : [];
+      const galerie = document.getElementById('p-galerie');
+      const imageModal = document.getElementById('image-modal');
+      const imageModalContent = document.getElementById('image-modal-content');
+      const closeImageModal = () => {
+        imageModal.classList.add('hidden');
+        imageModal.classList.remove('flex');
+        imageModalContent.src = '';
+      };
+
+      if (images.length > 0) {
+        images.forEach(src => {
+          const imageWrapper = document.createElement('button');
+          imageWrapper.type = 'button';
+          imageWrapper.className = 'w-full rounded-xl bg-black/30 p-2 cursor-zoom-in hover:bg-black/50 transition focus:outline-none focus:ring-2 focus:ring-primary';
+
+          const image = document.createElement('img');
+          image.src = src;
+          image.alt = `Image du projet ${projet.nom}`;
+          image.className = 'block w-full max-h-[80vh] object-contain rounded-lg mx-auto';
+          imageWrapper.appendChild(image);
+
+          imageWrapper.addEventListener('click', () => {
+            imageModalContent.src = src;
+            imageModalContent.alt = image.alt;
+            imageModal.classList.remove('hidden');
+            imageModal.classList.add('flex');
+          });
+
+          galerie.appendChild(imageWrapper);
+        });
+      } else {
+        galerie.classList.add('hidden');
+      }
+
+      document.getElementById('image-modal-close').addEventListener('click', closeImageModal);
+      imageModal.addEventListener('click', event => {
+        if (event.target === imageModal) {
+          closeImageModal();
+        }
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          closeImageModal();
+        }
+      });
+
+      if (projet.lien) {
+        const lienEl = document.getElementById('p-lien');
+        lienEl.href = projet.lien;
+        lienEl.classList.remove('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>
